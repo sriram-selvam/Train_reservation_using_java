@@ -1,5 +1,7 @@
 package linkedlist;
 
+import linked_list.Node;
+
 public class Linkedlist  {
    Node head;
 public void insert(int data)
@@ -70,6 +72,7 @@ for(int i=0;i<pos-1;i++)
 	
 	}
 }
+
 public void show()
 {
 	Node n=head;
@@ -91,5 +94,18 @@ public void count()
 	}
 	System.out.println("Total Nodes"+" "+count);
 }
-
+public void reverse()
+{
+   Node prev= null;
+	Node curr=head;
+   Node next=null;	
+   while(curr.next!=null)
+   {
+	   next=curr.next;
+	   curr.next=prev;
+	   prev=curr;
+	   curr=next;
+   }
+   head=prev;
+}
 }
