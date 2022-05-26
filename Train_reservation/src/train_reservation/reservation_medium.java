@@ -9,7 +9,7 @@ public class reservation_medium {
     	System.out.println("Welcome to IRCTC");
     	
     	ArrayList<train_details> trains=new ArrayList<train_details>(4);
-        trains.add(new train_details(169,true,250));
+        trains.add(new train_details(169,true,2));
         trains.add(new train_details(56,false,29));
     	trains.add(new train_details(91,true,20));
     	for(train_details train:trains)
@@ -20,7 +20,7 @@ public class reservation_medium {
 //            pass.add(new passenger_details("ram",7398,250));
 //            pass.add(new train_details("janani",43243,29));
 //            pass.add(new train_details("jeevesh",4238743,20));
-     	
+     	 
      	
     	
     	

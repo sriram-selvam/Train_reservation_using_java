@@ -1,4 +1,4 @@
-package train_reservation ;
+package train_reservation;
 
 public class train_details {
             private int train_no;
@@ -13,7 +13,7 @@ public class train_details {
            public int getCapacity()
            {
         	   return capacity;
-           }
+           } 
            public void setCapacity(int cap)
            {
         	   capacity=cap;
@@ -29,6 +29,10 @@ public class train_details {
            public void displayTrains()
            {
         	   System.out.println("Train no:" + train_no +" Sleeper:" + sleeper +" Capacity:"+capacity);
+           }
+           public int getTrain_no()
+           {
+        	   return train_no;
            }
           
 }

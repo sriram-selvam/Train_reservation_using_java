@@ -1,13 +1,14 @@
 package train_reservation;
 
 import java.util.Scanner;
-
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+import java.util.ArrayList;
+import java.util.Date;
 public class Booking {
-   private String passenger_name;
-   private int train_no;
-   private Date date;
+    String passenger_name;
+    int train_no;
+      Date date;
    Booking()
    {
 	   Scanner sc=new Scanner(System.in);
@@ -16,23 +17,24 @@ public class Booking {
 	   System.out.println("enter train no");
 	   train_no=sc.nextInt();
 	   System.out.println("Enter date in this foramt dd//mm//yyyy");
-	   String dateInput=sc.next();
-	   SimpleDateFormat dateFormat =new SimpleDateFormat("dd-MM-YYYY");
+	   Scanner ds= new Scanner(System.in);
+	   String s=ds.next();
+	   SimpleDateFormat dateFormat =new SimpleDateFormat("dd-MM-yyyy");  
 	 try {
-	   date=dateFormat.parse(dateInput);
+	   date =dateFormat.parse(s);
 	 }
 	 catch(ParseException e)
 	 {
 		 e.printStackTrace();
 	 }
-   }
-   public boolean isAvailable(ArrayList<Booking> Bookings,ArrayList<trains> trains)
+	 }
+
+   public boolean isAvailable(ArrayList<Booking> Bookings,ArrayList<train_details> trains)
    {
-	   int capacity=0;
-	   for(trains train:trains)
-		   if(trains.getTrain_no()==train_no)
-			   capacity=trains.getCapacity();
-   }
+	  int capacity=0;
+	   for(train_details train:trains)
+		   if(train.getTrain_no()==train_no)
+			   capacity=train.getCapacity();
    int count=0;
    for(Booking b:Bookings)
    {
@@ -41,6 +43,6 @@ public class Booking {
 		   count++;
 	   }
    }
-   return count<capcity?true:false;
-   
-}
+   return count<capacity?true:false;
+   }}   
+
