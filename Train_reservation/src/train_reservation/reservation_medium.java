@@ -45,10 +45,10 @@ public class reservation_medium {
     		    	 System.out.println("Seats Not available");
     		     }
     		}
-//    	    if(user_opt!=1 && user_opt!=2)
-//    	    {
-//    			System.out.println("Veliya poda boomer");
-//    	    }
+    	    if(user_opt!=1)
+    	    {
+    			System.out.println("Thank you! visit again");
+    	    }
     	}
     			
     }
